@@ -1,9 +1,9 @@
-baseURL = 'http://ogabriel.me/'
+baseURL = 'https://ogabriel.me/'
 copyright = "{year}"
 languageCode = 'en-US'
 defaultContentLanguage = 'pt'
 theme = 'lowkey'
-title = 'Gabriel Oliveira'
+title = 'Gabriel Messias'
 enableRobotsTXT = true
 summaryLength = 15
 paginate = 5
