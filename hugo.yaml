@@ -14,6 +14,8 @@ minify:
 services:
   disqus:
     shortname: gabrielws
+  googleAnalytics:
+    id: G-VJDBXBVLHP
 
 outputs:
   home:
@@ -78,14 +80,6 @@ params:
       url: "https://github.com/gabrielws"
     - name: Credly
       url: "https://www.credly.com/users/gabriel.oliveira"
-
-  analytics:
-    google:
-      SiteVerificationTag: "G-VJDBXBVLHP"
-    bing:
-      SiteVerificationTag: ""
-    yandex:
-      SiteVerificationTag: ""
 
   cover:
     hidden: false # hide everywhere but not in structured data
