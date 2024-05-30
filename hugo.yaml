@@ -13,7 +13,7 @@ minify:
 
 services:
   disqus:
-    shortname: gabrielws
+    shortname: ogabriel-me
   googleAnalytics:
     id: G-VJDBXBVLHP
 
