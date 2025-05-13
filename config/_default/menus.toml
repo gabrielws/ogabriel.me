@@ -1,0 +1,32 @@
+[[main]]
+    identifier = "home"
+    name = "menu_home"
+    url = "/"
+    weight = 1
+
+[[main]]
+    identifier = "about"
+    name = "menu_about"
+    url = "/about"
+    weight = 2
+    [main.params]
+        pt_url = "/sobre"
+
+[[main]]
+    identifier = "donate"
+    name = "menu_donate"
+    url = "#"
+    weight = 3
+
+# Social Media Configuration
+[[social]]
+    identifier = "linkedin"
+    name = "LinkedIn"
+    url = "https://www.linkedin.com/in/ogabriel-me/"
+    weight = 1
+
+[[social]]
+    identifier = "github"
+    name = "GitHub"
+    url = "https://github.com/gabrielws"
+    weight = 2

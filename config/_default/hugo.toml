@@ -1,0 +1,42 @@
+baseURL = 'https://ogabriel.me/'
+copyright = "{year}"
+defaultContentLanguage = 'pt'
+theme = 'enchanted-lowkey'
+enableRobotsTXT = true
+introduction = true
+summaryLength = 15
+
+[services]
+  [services.googleAnalytics]
+    id = 'G-VJDBXBVLHP'
+
+[pagination]
+  pagerSize = 5
+
+[languages]
+  [languages.pt]
+    title = "Gabriel Messias"
+    languageName = "Português"
+    contentDir = "content/pt"
+    languageCode = "pt-BR"
+    weight = 1
+  [languages.en]
+    title = "Gabriel Messias"
+    languageName = "English"
+    contentDir = "content/en"
+    languageCode = "en-US"
+    weight = 2
+
+[markup]
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = false
+    lineAnchors = ''
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = false
+    noClasses = true
+    noHl = false
+    style = 'dracula'
+    tabWidth = 4

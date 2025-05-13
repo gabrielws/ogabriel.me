@@ -1,0 +1,50 @@
+[latestPosts]
+    other = 'Últimas publicações'
+    
+[readMore]
+    other = 'Ler mais'
+
+[summary]
+    other = 'Sumário'
+
+[estimatedReadingTime]
+    other = 'Tempo estimado de leitura: %d minutos'
+
+[404_title]
+    other = 'Página não encontrada'
+
+[404_text]
+    other = 'Parece que você seguiu um link quebrado ou inseriu um URL que não existe neste site.'
+
+[categories]
+    other = 'Categorias'
+
+[tags]
+    other = 'Tags'
+
+[allPosts]
+    other = 'Todas as publicações'
+
+[language]
+    other = 'Idioma'
+
+[home]
+    other = 'Início'
+
+[about]
+    other = 'Sobre'
+
+[donate]
+    other = 'Doar'
+
+[introduction]
+    other = 'Apaixonado por IA e Open Source'
+
+[menu_home]
+    other = 'Início'
+
+[menu_about]
+    other = 'Sobre mim'
+
+[menu_donate]
+    other = 'Doar'

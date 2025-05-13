@@ -1,0 +1,49 @@
+# Homepage Config
+isSinglePage = true
+
+# Introduction
+introduction = true
+
+# Meta Config
+description = "Gabriel Messias - Analista de Sistemas Jr. - Z-Act"
+
+# Header Configuration
+avatar = "img/profile-picture.jpg"
+
+# Favicon
+favicon = "icons/favicon.ico"
+
+# Emoji
+[emoji]
+    enableEmoji = true
+
+# Disqus
+[disqus]
+    enabled = false
+    # shortname = ""
+
+# Utterances
+[utterances]
+    enabled = true
+    repo = "gabrielws/ogabriel.me"
+    issueTerm = "title"
+    theme = "boxy-light"
+    crossorigin = "anonymous"
+    async = true
+    # label = ""
+
+# Giscus
+[giscus]       
+    enabled = false
+    # repo = ""
+    # repoId = ""
+    # category = "Announcements"
+    # categoryId = ""
+    # mapping = "pathname"  # comment value is the default value
+    # strict = 0
+    # reactionsEnabled = 1
+    # emitMetadata = 0
+    # inputPosition = "top"
+    # theme = "light"
+    # lang = "zh-CN"
+    # lazyLoading = true
