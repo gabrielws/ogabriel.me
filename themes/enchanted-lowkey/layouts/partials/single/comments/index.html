@@ -1,11 +1,16 @@
 {{ if .IsPage }}
     <!-- giscus -->
-  {{ if .Site.Params.giscus.enable }}
+  {{ if .Site.Params.giscus.enabled }}
     {{ partial "single/comments/giscus" . }}
   {{ end }}
 
     <!-- disqus -->
-  {{ if .Site.Params.disqusShortname }}
+  {{ if and .Site.Params.disqus.enabled }}
     {{ partial "single/comments/disqus" . }}
+  {{ end }}
+
+    <!-- utterances -->
+  {{ if .Site.Params.utterances.enabled }}
+    {{ partial "single/comments/utterances" . }}
   {{ end }}
 {{ end }}

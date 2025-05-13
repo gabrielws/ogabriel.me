@@ -1,3 +1,4 @@
+{{- $lang := .Lang}}
 <article class="flex flex-col gap-1">
   <h1>
     <a href="{{ .Permalink }}">{{ .Title }}</a>
@@ -5,7 +6,12 @@
   
   <span class="date">
     <time datetime="{{ .PublishDate }}" title='{{ .PublishDate.Format "Mon, Jan 2, 2006, 3:04 PM MST" }}'>
+      {{ if eq $lang "en" }}
+      {{ .PublishDate.Format "January 2, 2006" }}
+      {{end}}
+      {{ if eq $lang "pt" }}
       {{ .PublishDate.Format "02/01/2006" }}
+      {{end}}
     </time>
   </span>
 

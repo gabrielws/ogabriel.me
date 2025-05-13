@@ -1,5 +1,7 @@
-<header class="flex flex-col sm:flex-row items-center gap-5 sm:gap-10 pt-16 py-12">
-  {{ partial "header/avatar" . }}
+<header class="flex flex-col sm:flex-row items-center gap-5 sm:gap-10 pt-12 py-4">
+  {{ if .Site.Params.avatar }}
+    {{ partial "header/avatar" . }}
+  {{ end }}
   
   <div class="flex flex-col gap-5">
     {{ partial "header/title" . }} 

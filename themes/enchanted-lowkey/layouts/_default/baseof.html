@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode | default `en` }}" class="scroll-smooth dark">
+<html lang="{{ .Site.LanguageCode | default `en` }}" class="scroll-smooth">
   <head>
     {{- partial "head/index" . -}}
   </head>
 
   <body class="max-w-screen-md mx-auto px-2.5">
-    <div class="header">
+    <div class="header flex justify-between items-center py-4">
       {{ partial "header/index" . }}
-      {{ partial "header/theme-button" . }}
+      <div class="flex items-center gap-4">
+        {{ partial "header/language-switcher" . }}
+        {{ partial "header/theme-button" . }}
+      </div>
     </div>
   
     <main id="content">
@@ -16,5 +19,13 @@
     </main>
 
     {{- partial "footer/index" . -}}
+
+    <script>
+      // Previne o flash aplicando o tema antes de qualquer renderização
+      const theme = localStorage.getItem('theme');
+      if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      }
+    </script>
   </body>
 </html>

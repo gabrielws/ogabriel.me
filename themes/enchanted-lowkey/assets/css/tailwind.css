@@ -366,7 +366,11 @@
     @apply text-4xl leading-snug font-bold text-gray-900 dark:text-gray-300;
   }
 
-  .title-small {
+  .title-medium {
     @apply text-2xl font-extrabold text-gray-900 dark:text-gray-300;
+  }
+
+  .title-small {
+    @apply text-xl font-extrabold text-gray-900 dark:text-gray-300;
   }
 }

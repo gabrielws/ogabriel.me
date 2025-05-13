@@ -1,47 +1,69 @@
-<button class="toggle-theme" aria-label="Toggle Theme" title="Toggle Theme" onclick="toggleTheme()">
-  <span class="theme-icon light"> {{ partial "utils/icon" "sun" }} </span>
-  <span class="theme-icon dark"> {{ partial "utils/icon" "moon" }} </span>
+<button class="toggle-theme text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 focus:outline-none relative w-6 h-6" aria-label="Toggle Theme" title="Toggle Theme" onclick="toggleTheme()">
+  <span class="theme-icon light absolute inset-0 transform"> {{ partial "utils/icon" "sun" }} </span>
+  <span class="theme-icon dark absolute inset-0 transform"> {{ partial "utils/icon" "moon" }} </span>
 </button>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const theme = localStorage.getItem('theme');
+  const animationClasses = ['opacity-0', 'scale-50', 'rotate-90'];
+  const transitionClasses = ['transition-all', 'duration-300', 'ease-in-out'];
 
-    if (!theme || theme === 'light') {
-      setTheme('light');
+  function _setInitialIconState(isDarkTheme) {
+    const lightIcon = document.querySelector('.theme-icon.light');
+    const darkIcon = document.querySelector('.theme-icon.dark');
+
+    // Remove classes de transição para garantir que o estado inicial não seja animado
+    lightIcon.classList.remove(...transitionClasses);
+    darkIcon.classList.remove(...transitionClasses);
+
+    if (isDarkTheme) {
+      darkIcon.classList.remove(...animationClasses);
+      lightIcon.classList.add(...animationClasses);
     } else {
-      setTheme(theme);
-    }
-  });
-
-  function setTheme(theme) {
-    const html = document.querySelector('html');
-    localStorage.setItem('theme', theme);
-
-    if (theme === 'light') {
-      if (html.classList.contains('dark')) {
-        document.querySelector('html').classList.remove('dark');
-      }
-
-      document.querySelector('.theme-icon.light').style.display = 'none';
-      document.querySelector('.theme-icon.dark').style.display = 'block';
-    } else {
-      if (!html.classList.contains('dark')) {
-        document.querySelector('html').classList.add('dark');
-      }
-
-      document.querySelector('.theme-icon.dark').style.display = 'none';
-      document.querySelector('.theme-icon.light').style.display = 'block';
+      lightIcon.classList.remove(...animationClasses);
+      darkIcon.classList.add(...animationClasses);
     }
   }
 
-  function toggleTheme() {
-    const theme = localStorage.getItem('theme');
+  document.addEventListener('DOMContentLoaded', function () {
+    const storedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const initialIsDark = storedTheme === 'dark' || (!storedTheme && prefersDark);
 
-    if (theme === 'light') {
-      setTheme('dark');
+    // Define o tema na tag <html>
+    if (initialIsDark) {
+      document.documentElement.classList.add('dark');
     } else {
-      setTheme('light');
+      document.documentElement.classList.remove('dark');
+    }
+    // Define o tema no localStorage
+    if (!storedTheme) {
+        localStorage.setItem('theme', initialIsDark ? 'dark' : 'light');
+    }
+
+    _setInitialIconState(initialIsDark);
+  });
+
+  function toggleTheme() {
+    const lightIcon = document.querySelector('.theme-icon.light');
+    const darkIcon = document.querySelector('.theme-icon.dark');
+
+    // Adiciona classes de transição antes de mudar o estado para animar
+    lightIcon.classList.add(...transitionClasses);
+    darkIcon.classList.add(...transitionClasses);
+
+    const isCurrentlyDark = document.documentElement.classList.contains('dark');
+    const newThemeIsDark = !isCurrentlyDark;
+
+    if (newThemeIsDark) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+      darkIcon.classList.remove(...animationClasses);
+      lightIcon.classList.add(...animationClasses);
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+      lightIcon.classList.remove(...animationClasses);
+      darkIcon.classList.add(...animationClasses);
     }
   }
 </script>

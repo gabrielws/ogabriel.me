@@ -1,9 +1,10 @@
 ---
 title: "{{ replace .Name '-' ' ' | title }}"
-date: {{ .Date }}
-draft: true # Set 'false' to publish
-tableOfContents: false # Enable/disable Table of Contents
 description: ''
+translationKey: ''
+date: {{ .Date }}
+tableOfContents: false # Enable/disable Table of Contents
+draft: true # Set 'false' to publish
 categories:
   - Sem categoria
 tags:

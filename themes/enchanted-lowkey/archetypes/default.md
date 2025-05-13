@@ -1,8 +1,9 @@
 ---
 title: "{{ replace .Name '-' ' ' | title }}"
+description: ''
+translationKey: ''
 date: {{ .Date }}
 draft: true # Set 'false' to publish
-description: ''
 categories:
   - Uncategories
 tags:
