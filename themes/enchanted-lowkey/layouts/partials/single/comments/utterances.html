@@ -1,0 +1,14 @@
+<div class="post-share-icon clearfix">
+    <script 
+        src="https://utteranc.es/client.js"
+        repo="{{ .Site.Params.utterances.repo }}"
+        {{ if .Params.translationKey }}
+        issue-term="{{ .Params.translationKey }}"
+        {{ else }}
+        issue-term="{{ .Site.Params.utterances.issueTerm }}"
+        {{ end }}
+        theme="{{ .Site.Params.utterances.theme }}"
+        crossorigin="{{ .Site.Params.utterances.crossorigin }}"
+        {{ if .Site.Params.utterances.async }}async{{ end }}>
+    </script>
+</div>

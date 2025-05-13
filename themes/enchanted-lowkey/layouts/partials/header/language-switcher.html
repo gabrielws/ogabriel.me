@@ -1,0 +1,28 @@
+{{ if hugo.IsMultilingual }}
+<div class="flex items-center ml-4">
+  {{ $currentPage := . }}
+  {{ $currentLang := .Lang }}
+
+  {{ range .Site.Languages }}
+    {{ if ne .Lang $currentLang }}
+      {{ $linkLang := .Lang }}
+      {{ $linkURL := absLangURL (print "/" $linkLang "/") }} {{/* URL da página inicial no idioma alvo */}}
+
+      {{/* Verifica se a página atual tem uma tradução direta */}}
+      {{ if $currentPage.IsTranslated }}
+        {{ range $currentPage.Translations }}
+          {{ if eq .Lang $linkLang }}
+            {{ $linkURL = .Permalink }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+
+      <a href="{{ $linkURL }}" 
+         class="px-2 py-1 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+         title="{{ if eq $currentLang "pt" }}Mudar para {{ else }}Change to {{ end }}{{ .LanguageName }}">
+        {{ .LanguageName }}
+      </a>
+    {{ end }}
+  {{ end }}
+</div>
+{{ end }} 
